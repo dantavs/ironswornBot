@@ -1,0 +1,65 @@
+// This is your Prisma schema file,
+// learn m
+//more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Habit {
+  id          String @id @default(uuid())
+  title       String
+  created_at  DateTime
+
+  @@map("habits")
+}
+
+model Character {
+    id String @id @default(uuid())
+    name String
+    edge Int
+    heart Int
+    iron Int
+    shadow Int
+    wits Int
+    health Int @default(5)
+    spirit Int @default(5)
+    supply Int @default(5)
+    momentum Int @default(2)
+    assets Asset[]
+    vows Vow[]
+    playerId String
+    playerUsername String 
+    channelId String
+    createdAt DateTime @default(now())
+    portrait String @default("")
+
+  @@map("characters")
+}
+
+model Asset {
+  id String @id @default(uuid())
+  character Character @relation(fields: [characterId], references: [id])
+  characterId String
+  subject String
+  description String
+
+  @@map("assets")
+}
+
+model Vow {
+  id String @id @default(uuid())
+  character Character @relation(fields: [characterId], references: [id])
+  characterId String
+  subject String
+  description String
+  challengeRank String
+  progressTrack Int
+
+  @@map("vows")
+}
