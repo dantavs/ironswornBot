@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "18"
+  },
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsup src",
@@ -22,6 +25,7 @@
     "fastify": "^4.11.0"
   },
   "devDependencies": {
+    "@types/node": "^18.15.11",
     "prisma": "^4.8.1",
     "tsup": "^6.7.0",
     "tsx": "^3.12.2",
