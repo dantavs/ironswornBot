@@ -53,6 +53,10 @@ import { rollMakeCamp } from "./moves/m-makeCamp";
 import { rollUndetakeJourney } from "./moves/m-undertakeJourney";
 import { rollEndureHarm } from "./moves/m-endureHarm";
 import { zeroHalthTable } from "./oracles/zeroHealthTable";
+import { updateHealth } from "./statsUpdate/updateHealth";
+import { updateMomentum } from "./statsUpdate/updateMomentum";
+import { updateSpirit } from "./statsUpdate/updateSpirit";
+import { updateSupply } from "./statsUpdate/updateSupply";
 
 export const CommandList: Command[] = [
     OracleList,
@@ -63,6 +67,7 @@ export const CommandList: Command[] = [
     oracleSQuickettlementName, oracleRegion, oracleSettlementName, oracleSettlementTrouble, oracleTheme,  
     oracleTrollName, oracleVarouName, 
     getChar, Collect,
+    updateHealth, updateMomentum, updateSpirit, updateSupply,
     rollGatherInformation, rollPaythePrice, rollAskTheOracle, rollHeal, rollResupply, rollMakeCamp, rollUndetakeJourney,
     rollFaceDangerEdge,rollFaceDangerIron, rollFaceDangerHeart, rollFaceDangerShadow, rollFaceDangerWits,
     rollSecureAdvantageEdge, rollSecureAdvantageIron, rollSecureAdvantageHeart, rollSecureAdvantageShadow, rollSecureAdvantageWits,
